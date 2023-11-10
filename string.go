@@ -12,6 +12,7 @@ var (
 	alphanumericMax   = big.NewInt(int64(len(alphanumericRunes)))
 )
 
+// AlphanumericString returns a random alphanumeric string of the given length.
 func AlphanumericString(length int) (string, error) {
 	if length < 0 {
 		return "", errors.New("length must not be negative")
