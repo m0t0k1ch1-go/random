@@ -1,4 +1,4 @@
-module github.com/m0t0k1ch1-go/random
+module github.com/m0t0k1ch1-go/randomutil
 
 go 1.21
 

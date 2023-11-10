@@ -1,11 +1,11 @@
-package random_test
+package randomutil_test
 
 import (
 	"slices"
 	"testing"
 
-	"github.com/m0t0k1ch1-go/random"
-	"github.com/m0t0k1ch1-go/random/internal/testutil"
+	"github.com/m0t0k1ch1-go/randomutil"
+	"github.com/m0t0k1ch1-go/randomutil/internal/testutil"
 )
 
 var (
@@ -15,7 +15,7 @@ var (
 func TestAlphanumericString(t *testing.T) {
 	t.Run("success", func(t *testing.T) {
 		for i := 0; i < 100; i++ {
-			s, err := random.AlphanumericString(8)
+			s, err := randomutil.AlphanumericString(8)
 			if err != nil {
 				t.Fatal(err)
 			}
