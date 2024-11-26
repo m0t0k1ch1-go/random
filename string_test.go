@@ -4,8 +4,9 @@ import (
 	"slices"
 	"testing"
 
+	"github.com/stretchr/testify/require"
+
 	"github.com/m0t0k1ch1-go/randomutil"
-	"github.com/m0t0k1ch1-go/randomutil/internal/testutil"
 )
 
 var (
@@ -16,13 +17,11 @@ func TestAlphanumericString(t *testing.T) {
 	t.Run("success", func(t *testing.T) {
 		for i := 0; i < 100; i++ {
 			s, err := randomutil.AlphanumericString(8)
-			if err != nil {
-				t.Fatal(err)
-			}
+			require.Nil(t, err)
 
-			testutil.Equal(t, 8, len(s))
+			require.Len(t, s, 8)
 			for _, r := range s {
-				testutil.Equal(t, true, slices.Contains(alphanumericRunes, r))
+				require.True(t, slices.Contains(alphanumericRunes, r))
 			}
 		}
 	})
